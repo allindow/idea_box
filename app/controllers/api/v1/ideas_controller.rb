@@ -26,6 +26,6 @@ class Api::V1::IdeasController < ApplicationController
     end
 
     def get_ideas
-      @ideas = Idea.all
+      @ideas = Idea.all.reverse
     end
 end

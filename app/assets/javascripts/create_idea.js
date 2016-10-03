@@ -22,7 +22,7 @@ function createIdeaHTML( ideaData ){
             + "'><h3>Title: "
             + ideaData.title
             + "</h3><p>"
-            + ideaData.body
+            + truncate(ideaData.body) + "..."
             +"</p>"
             + "<p>Quality: "
             + ideaData.quality
@@ -37,6 +37,11 @@ function renderIdea( ideaData ){
 function clearForm(){
   $("#idea-title").val("");
   $("#idea-body").val("")
+}
+
+function truncate(string){
+  var trimmed = string.substring(0, 100);
+  return trimmed.substring(0, Math.min(trimmed.length, trimmed.lastIndexOf(" ")))
 }
 
 function handleError(error){console.log(error)}

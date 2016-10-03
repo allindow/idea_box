@@ -1,8 +1,8 @@
 class Api::V1::IdeasController < ApplicationController
-  before_action :get_ideas, except: [:destroy]
+  before_action :get_ideas, except: [:destroy, :create]
   def create
-    Idea.create(idea_params)
-    render 'api/v1/ideas/index', status: 201
+    @idea = Idea.create(idea_params)
+    render 'api/v1/ideas/show', status: 201
   end
 
   def index

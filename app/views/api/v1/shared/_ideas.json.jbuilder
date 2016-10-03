@@ -1,1 +1,1 @@
-json.extract! idea, :title, :body, :quality
+json.extract! idea, :title, :body, :quality, :id

@@ -31,7 +31,7 @@ function createIdeaHTML( ideaData ){
 }
 
 function renderIdea( ideaData ){
-  $("#all-ideas").append(ideaData)
+  $("#all-ideas").prepend(ideaData)
 }
 
 function clearForm(){

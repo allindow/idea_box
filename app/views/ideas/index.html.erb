@@ -1,15 +1,16 @@
 <div class="form-group">
-  <input class="form-control" type="text" id="idea-title">
-</div>
-<div class="form-group">
-  <input class="form-control" type="text" id="idea-body">
+  Title: <input class="form-control" type="text" id="idea-title">
+  Body: <input class="form-control" type="text" id="idea-body">
 </div>
 <input class="btn btn-default" id="create-idea" type="button" name="submit" value="Create Idea">
-
+<h3>All the Ideas!</h3>
+<div id="all-ideas">
 <% @ideas.each do |idea| %>
-  <div class="well">
-    <%= idea.title %>
-    <%= idea.body %>
-    <%= idea.quality %>
+  <div class="well idea" data-id="<%= idea.id %>">
+    <h3>Title: <%= idea.title %></h3>
+    <p><%= idea.body %></p>
+    <p>Quality: <%= idea.quality %></p>
+    <button id='delete-idea' class='btn btn-default btn-xs'>Delete</button>
   </div>
 <% end %>
+</div>

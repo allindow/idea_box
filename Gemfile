@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem "twitter-bootstrap-rails"
 
 group :production do
   gem 'rails_12factor', group: :production

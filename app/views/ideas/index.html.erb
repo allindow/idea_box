@@ -8,7 +8,7 @@
 <% @ideas.each do |idea| %>
   <div class="well idea" data-id="<%= idea.id %>">
     <h3>Title: <%= idea.title %></h3>
-    <p><%= idea.body %></p>
+    <p><%= truncate(idea.body, length: 101, separator: ' ') %></p>
     <p>Quality: <%= idea.quality %></p>
     <button id='delete-idea' class='btn btn-default btn-xs'>Delete</button>
   </div>

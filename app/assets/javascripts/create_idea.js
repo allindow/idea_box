@@ -21,17 +21,18 @@ function createIdeaHTML( ideaData ){
             + ideaData.id
             + "' data-quality='"
             + ideaData.quality
-            + "'><h3>Title: "
+            + "'><h3 id='idea-title' contentEditable='true'>"
             + ideaData.title
-            + "</h3><p>"
-            + truncate(ideaData.body) + "..."
+            + "</h3><p id='idea-body' contentEditable='true'>"
+            + truncate(ideaData.body)
             +"</p>"
             + "<p id='quality'>Quality: "
             + ideaData.quality
             +"</p>"
             + "<button id='delete-idea' class='btn btn-default btn-xs'>Delete</button>"
             + "<button id='up-idea' class='btn btn-default btn-xs'><i class='fa fa-thumbs-o-up bigger' aria-hidden='true'></i></button>"
-            + "<button id='down-idea' class='btn btn-default btn-xs'><i class='fa fa-thumbs-o-down bigger' aria-hidden='true'></i></button>")
+            + "<button id='down-idea' class='btn btn-default btn-xs'><i class='fa fa-thumbs-o-down bigger' aria-hidden='true'></i></button>"
+          )
 }
 
 
@@ -45,8 +46,14 @@ function clearForm(){
 }
 
 function truncate(string){
-  var trimmed = string.substring(0, 100);
-  return trimmed.substring(0, Math.min(trimmed.length, trimmed.lastIndexOf(" ")))
+  if(string.length > 100){
+    var trimmed = string.substring(0, 100);
+    return trimmed.substring(0, Math.min(trimmed.length, trimmed.lastIndexOf(" "))) + "...";
+  } else {
+    return string;
+  }
 }
+
+
 
 function handleError(error){console.log(error)}

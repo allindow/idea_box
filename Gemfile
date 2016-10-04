@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem "twitter-bootstrap-rails"
 gem "font-awesome-sass"
+gem 'selenium-webdriver'
 
 group :production do
   gem 'rails_12factor', group: :production

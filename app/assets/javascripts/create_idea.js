@@ -19,16 +19,21 @@ function createIdea(){
 function createIdeaHTML( ideaData ){
   return $("<div class='well idea' data-id='"
             + ideaData.id
+            + "' data-quality='"
+            + ideaData.quality
             + "'><h3>Title: "
             + ideaData.title
             + "</h3><p>"
             + truncate(ideaData.body) + "..."
             +"</p>"
-            + "<p>Quality: "
+            + "<p id='quality'>Quality: "
             + ideaData.quality
             +"</p>"
-            + "<button id='delete-idea' class='btn btn-default btn-xs'>Delete</button>")
+            + "<button id='delete-idea' class='btn btn-default btn-xs'>Delete</button>"
+            + "<button id='up-idea' class='btn btn-default btn-xs'><i class='fa fa-thumbs-o-up bigger' aria-hidden='true'></i></button>"
+            + "<button id='down-idea' class='btn btn-default btn-xs'><i class='fa fa-thumbs-o-down bigger' aria-hidden='true'></i></button>")
 }
+
 
 function renderIdea( ideaData ){
   $("#all-ideas").prepend(ideaData)

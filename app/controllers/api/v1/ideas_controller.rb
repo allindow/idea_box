@@ -1,17 +1,18 @@
 class Api::V1::IdeasController < ApplicationController
-  before_action :get_ideas, except: [:destroy, :create]
   def create
     @idea = Idea.create(idea_params)
     render 'api/v1/ideas/show', status: 201
   end
 
   def index
+    @ideas = Idea.all.reverse
     render 'api/v1/ideas/index'
   end
 
   def update
-    Idea.find(params[:id]).update(idea_params)
-    render 'api/v1/ideas/index'
+    @idea = Idea.find(params[:id])
+    @idea.update(update_params)
+    render 'api/v1/ideas/show'
   end
 
   def destroy
@@ -25,7 +26,8 @@ class Api::V1::IdeasController < ApplicationController
       params.permit(:title, :body)
     end
 
-    def get_ideas
-      @ideas = Idea.all.reverse
+    def update_params
+      params.permit(:title, :body, :quality)
     end
+
 end

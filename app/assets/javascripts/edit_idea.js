@@ -11,15 +11,23 @@ function editTitle(){
   $("#all-ideas").on("click", "#idea-title", function(){
     var $idea = $(this).closest(".idea")
     $title = $idea.children('#idea-title')
-    $('body').bind('click keydown', $title, function(event){
-      if (event.keyCode == 13){
+    $('body').on('click keydown', $title, function(event){
+      if(event.keyCode == 13){
         event.preventDefault();
         $(event.target).blur();
         $(event.target).text(truncate($(event.target).text()));
         updateTitle($(event.target));
-      } else if (event.type == "click" && event.target.id != "idea-body"){
+      } else if(event.type == "click" && event.target.id != "idea-title"){
         $title.text(truncate($title.text()));
         updateTitle($title);
+      }
+    })
+    $('body').on('keydown', $title, function(event){
+      if(event.keyCode == 13){
+        event.preventDefault();
+        $(event.target).blur();
+        $(event.target).text(truncate($(event.target).text()));
+        updateTitle($(event.target));
       }
     })
   })
@@ -28,7 +36,7 @@ function editBody(){
   $("#all-ideas").on("click", "#idea-body", function(){
     var $idea = $(this).closest(".idea")
     $body = $idea.children('#idea-body')
-    $('body').bind('click keydown', $body, function(event){
+    $('body').on('click keydown', $body, function(event){
       if (event.type == "keydown" && event.keyCode == 13){
         event.preventDefault();
         $(event.target).blur();

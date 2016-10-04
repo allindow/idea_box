@@ -7,9 +7,9 @@ RSpec.describe "Ideas requests", type: :request do
 
     expect(Idea.count).to eq(1)
     expect(Idea.last.title).to eq("idea1")
-    expect(json(response).last["title"]).to eq("idea1")
-    expect(json(response).last["body"]).to eq("body1")
-    expect(json(response).last["quality"]).to eq("swill")
+    expect(json(response)["title"]).to eq("idea1")
+    expect(json(response)["body"]).to eq("body1")
+    expect(json(response)["quality"]).to eq("swill")
   end
 
   it "should get all ideas" do
@@ -19,10 +19,10 @@ RSpec.describe "Ideas requests", type: :request do
 
     expect(response).to be_success
     expect(json(response).count).to eq(2)
-    expect(json(response).first["title"]).to eq(Idea.first.title)
-    expect(json(response).first["body"]).to eq(Idea.first.body)
-    expect(json(response).last["title"]).to eq(Idea.last.title)
-    expect(json(response).last["body"]).to eq(Idea.last.body)
+    expect(json(response).first["title"]).to eq(Idea.last.title)
+    expect(json(response).first["body"]).to eq(Idea.last.body)
+    expect(json(response).last["title"]).to eq(Idea.first.title)
+    expect(json(response).last["body"]).to eq(Idea.first.body)
   end
 
   it "should delete an idea by id" do
@@ -44,8 +44,8 @@ RSpec.describe "Ideas requests", type: :request do
 
     expect(Idea.last.title).to eq("new-title")
     expect(Idea.last.body).to eq("new-body")
-    expect(json(response).last["title"]).to eq("new-title")
-    expect(json(response).last["body"]).to eq("new-body")
+    expect(json(response)["title"]).to eq("new-title")
+    expect(json(response)["body"]).to eq("new-body")
   end
 
   def json(response)

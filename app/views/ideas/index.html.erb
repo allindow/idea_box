@@ -7,8 +7,8 @@
 <div id="all-ideas">
 <% @ideas.each do |idea| %>
   <div class="well idea" data-id="<%= idea.id %>" data-quality="<%= idea.quality %>">
-    <h3>Title: <%= idea.title %></h3>
-    <p><%= truncate(idea.body, length: 101, separator: ' ') %></p>
+    <h3 id="idea-title" contentEditable="true"><%= idea.title %></h3>
+    <p id="idea-body" contentEditable="true"><%= truncate(idea.body, length: 101, separator: ' ') %></p>
     <p id='quality'>Quality: <%= idea.quality %></p>
     <button id='delete-idea' class='btn btn-default btn-xs'>Delete</button>
     <button id='up-idea' class='btn btn-default btn-xs'><i class="fa fa-thumbs-o-up bigger" aria-hidden="true"></i></button>

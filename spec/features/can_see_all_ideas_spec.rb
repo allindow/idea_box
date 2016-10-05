@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Can see all ideas" do
+RSpec.feature "Can see all ideas", js: true do
   scenario "visit the main page" do
     idea1 = create(:idea)
     idea2 = create(:idea)

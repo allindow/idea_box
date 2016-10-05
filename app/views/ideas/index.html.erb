@@ -1,30 +1,21 @@
 <div class="page-body">
   <div class="form-group well new-idea">
-<h3>WHAT DO YOU THINK?</h3>
-  Title: <input class="form-control" type="text" id="idea-title">
-  Body: <input class="form-control" type="text" id="idea-body">
-  <center><input class="btn btn-default" id="create-idea" type="button" name="submit" value="Save"></center>
-</div>
-<center>
-<div class="title-block">
-    <h1>IDEA BOX</h1>
-    <hr>
-<div class="filter filter-bar">
-  <label>Search&nbsp;</label>
-  <%= text_field :idea, :filter_all, class: "filter-field" %>
-</div><hr></center>
-</div>
-
-<div id="all-ideas">
-<% @ideas.each do |idea| %>
-  <div class="well idea" data-id="<%= idea.id %>" data-quality="<%= idea.quality %>" data-all="<%= idea.title %> <%= idea.body %>">
-    <h3 id="idea-title" contentEditable="true"><%= idea.title %></h3>
-    <p id="idea-body" contentEditable="true"><%= truncate(idea.body, length: 101, separator: ' ') %></p>
-    <p id='quality'>Quality: <%= idea.quality %></p>
-    <button id='delete-idea' class='btn btn-default btn-xs'>Delete</button>
-    <button id='up-idea' class='btn btn-default btn-xs'><i class="fa fa-thumbs-o-up bigger" aria-hidden="true"></i></button>
-    <button id='down-idea' class='btn btn-default btn-xs'><i class="fa fa-thumbs-o-down bigger" aria-hidden="true"></i></button>
+    <h3>WHAT DO YOU THINK?</h3>
+    Title: <input class="form-control" type="text" id="idea-title">
+    Body: <input class="form-control" type="text" id="idea-body">
+    <center><input class="btn btn-default" id="create-idea" type="button" name="submit" value="Save"></center>
   </div>
-<% end %>
-</div>
+  <center>
+    <div class="title-block">
+      <h1>IDEA BOX</h1>
+      <hr>
+      <div class="filter filter-bar">
+        <label>Search&nbsp;</label>
+        <%= text_field :idea, :filter_all, class: "filter-field" %>
+      </div>
+      <hr>
+    </div>
+  </center>
+  <div id="all-ideas">
+  </div>
 </div>

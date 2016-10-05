@@ -12,7 +12,7 @@ function editTitle(){
     var $idea = $(this).closest(".idea")
     $title = $idea.children('#idea-title')
     $('body').on('click keydown', $title, function(event){
-      if(event.keyCode == 13){
+      if(event.type == "keydown" && event.keyCode == 13){
         event.preventDefault();
         $(event.target).blur();
         $(event.target).text(truncate($(event.target).text()));
@@ -20,14 +20,6 @@ function editTitle(){
       } else if(event.type == "click" && event.target.id != "idea-title"){
         $title.text(truncate($title.text()));
         updateTitle($title);
-      }
-    })
-    $('body').on('keydown', $title, function(event){
-      if(event.keyCode == 13){
-        event.preventDefault();
-        $(event.target).blur();
-        $(event.target).text(truncate($(event.target).text()));
-        updateTitle($(event.target));
       }
     })
   })
@@ -71,5 +63,3 @@ function updateBody(target){
   })
   .fail(handleError)
 }
-
-function handleError(error){console.log(error)}

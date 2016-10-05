@@ -1,3 +1,37 @@
+body {
+  background-image: asset-url('lightbulb.jpeg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #92a1a0;
+}
+
 .bigger {
   font-size: 18px;
+}
+
+.page-body {
+  width: 50%;
+  padding-left: 10%;
+}
+
+.new-idea {
+  margin-top: 10%;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+#all-ideas {
+  width: 50%;
+  padding-left: 10%;
+}
+
+.title-block {
+  color: white;
+}
+
+.filter-field {
+  color: black;
 }

@@ -15,5 +15,3 @@ function deleteIdea(){
     .fail(handleError)
   })
 }
-
-function handleError(error){console.log(error)}

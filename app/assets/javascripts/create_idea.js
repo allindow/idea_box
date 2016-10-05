@@ -21,6 +21,8 @@ function createIdeaHTML( ideaData ){
             + ideaData.id
             + "' data-quality='"
             + ideaData.quality
+            + "' data-all='"
+            + ideaData.title + " " + ideaData.body
             + "'><h3 id='idea-title' contentEditable='true'>"
             + ideaData.title
             + "</h3><p id='idea-body' contentEditable='true'>"

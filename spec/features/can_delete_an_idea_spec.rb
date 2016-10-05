@@ -5,7 +5,6 @@ RSpec.feature "Can delete an idea", js: true do
     Idea.create(title: "Best idea", body: "is this one")
 
     visit root_path
-
     within('.idea') do
       click_on "Delete"
     end

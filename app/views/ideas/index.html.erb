@@ -1,12 +1,18 @@
-<div class="form-group">
+<div class="page-body">
+  <div class="form-group well new-idea">
+<h3>WHAT DO YOU THINK?</h3>
   Title: <input class="form-control" type="text" id="idea-title">
   Body: <input class="form-control" type="text" id="idea-body">
+  <center><input class="btn btn-default" id="create-idea" type="button" name="submit" value="Save"></center>
 </div>
-<input class="btn btn-default" id="create-idea" type="button" name="submit" value="Save">
-<h3 class="index-header">All the Ideas!</h3>
+<center>
+<div class="title-block">
+    <h1>IDEA BOX</h1>
+    <hr>
 <div class="filter filter-bar">
   <label>Search&nbsp;</label>
   <%= text_field :idea, :filter_all, class: "filter-field" %>
+</div><hr></center>
 </div>
 
 <div id="all-ideas">
@@ -20,4 +26,5 @@
     <button id='down-idea' class='btn btn-default btn-xs'><i class="fa fa-thumbs-o-down bigger" aria-hidden="true"></i></button>
   </div>
 <% end %>
+</div>
 </div>

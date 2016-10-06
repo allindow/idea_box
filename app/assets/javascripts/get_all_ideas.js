@@ -2,7 +2,11 @@
 //   getIdeas();
 // })
 // function getIdeas(){
-//   var $ideas = $.ajax({type: "get", url: "/api/v1/ideas", success: function(response){ setIdeas(response)}})
+//   var $ideas = $.ajax({type: "get", url: "/api/v1/ideas",
+//                     success: function(response){
+//                       setIdeas(response)
+//                     }
+//                   })
 // }
 //
 // function setIdeas(ideaList){

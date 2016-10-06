@@ -5,7 +5,7 @@ class Api::V1::IdeasController < ApplicationController
   end
 
   def index
-    @ideas = Idea.all
+    @ideas = Idea.order(created_at: :desc)
     render 'api/v1/ideas/index'
   end
 
